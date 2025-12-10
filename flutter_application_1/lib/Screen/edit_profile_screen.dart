@@ -48,7 +48,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   String _formatDate(String date) {
     if (date.isEmpty) return '';
     try {
-      // Si la fecha viene en formato ISO, extraer solo la parte de la fecha
       return date.split('T')[0];
     } catch (e) {
       return date;
@@ -106,7 +105,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         'birthday': _birthdayController.text.trim(),
       };
 
-      // Solo incluir password si se proporcionó uno nuevo
       if (_passwordController.text.isNotEmpty) {
         userData['password'] = _passwordController.text;
       }

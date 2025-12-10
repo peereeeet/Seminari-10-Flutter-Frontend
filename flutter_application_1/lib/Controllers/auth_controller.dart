@@ -130,7 +130,6 @@ class AuthController extends GetxController {
     }
   }
 
-  // ========== NUEVO MÉTODO: ACTUALIZAR USUARIO ==========
   Future<Map<String, dynamic>> updateCurrentUser(Map<String, dynamic> userData) async {
     try {
       if (currentUser.value == null || token == null) {
@@ -154,7 +153,6 @@ class AuthController extends GetxController {
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         
-        // Actualizar el usuario actual con los nuevos datos
         currentUser.value = User.fromJson({
           ...data,
           'token': token,
